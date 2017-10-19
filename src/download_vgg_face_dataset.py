@@ -47,7 +47,7 @@ def main(args):
             class_path = os.path.join(args.dataset_descriptor, dir_name)
             if not os.path.exists(class_path):
                 os.makedirs(class_path)
-            for line in lines:
+            for line in lines[:100]:
                 x = line.split(' ')
                 filename = x[0]
                 url = x[1]
