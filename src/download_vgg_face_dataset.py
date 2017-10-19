@@ -43,7 +43,7 @@ def main(args):
         if textfile_name.endswith('.txt'):
             with open(os.path.join(args.dataset_descriptor, textfile_name), 'rt') as f:
                 lines = f.readlines()
-            dir_name = textfile_name.split('.')[0]
+            dir_name = textfile_name.rsplit('.', 1)[0]
             class_path = os.path.join(args.dataset_descriptor, dir_name)
             if not os.path.exists(class_path):
                 os.makedirs(class_path)
