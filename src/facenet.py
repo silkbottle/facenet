@@ -341,7 +341,7 @@ def get_image_paths(facedir):
     image_paths = []
     if os.path.isdir(facedir):
         images = os.listdir(facedir)
-        image_paths = [os.path.join(facedir,img) for img in images if not img.endswith("err")]
+        image_paths = filter(lambda x: not x.endswith("err"), [os.path.join(facedir,img) for img in images])
     return image_paths
   
 def split_dataset(dataset, split_ratio, mode):

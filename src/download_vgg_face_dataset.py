@@ -97,7 +97,7 @@ def parse_arguments(argv):
         help='Directory containing the text files with the image URLs. Image files will also be placed in this directory.')
     parser.add_argument('--output_format', type=str, help='Format of the output images', default='png', choices=['png', 'jpg'])
     parser.add_argument('--image_size', type=int,
-        help='Image size (height, width) in pixels.', default=256)
+        help='Image size (height, width) in pixels.', default=160)
     return parser.parse_args(argv)
 
 if __name__ == '__main__':
