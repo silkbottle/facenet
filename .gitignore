@@ -92,3 +92,7 @@ ENV/
 
 # PyCharm project setting
 .idea
+
+# Data
+vgg_face_dataset.tar.gz
+vgg_face_dataset/

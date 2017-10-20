@@ -33,8 +33,8 @@ import sys
 import argparse
 import os
 import socket
-from urllib2 import HTTPError, URLError
-from httplib import HTTPException
+from urllib.request import HTTPError, URLError
+from http.client import HTTPException
 
 def main(args):
     socket.setdefaulttimeout(30)
@@ -51,7 +51,8 @@ def main(args):
                 x = line.split(' ')
                 filename = x[0]
                 url = x[1]
-                box = np.rint(np.array(map(float, x[2:6])))  # x1,y1,x2,y2
+                box = np.rint(np.array(list(map(float, x[2:6])))).astype(np.int)  # x1,y1,x2,y2
+                print(box)
                 image_path = os.path.join(args.dataset_descriptor, dir_name, filename+'.'+args.output_format)
                 error_path = os.path.join(args.dataset_descriptor, dir_name, filename+'.err')
                 if not os.path.exists(image_path) and not os.path.exists(error_path):
